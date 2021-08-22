@@ -1,0 +1,30 @@
+.imgGrid {
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 1em;
+}
+.imgWrap {
+    overflow: hidden;
+    padding: 50% 0;
+    position: relative;
+}
+.imgWrap img {
+    min-width: 100%;
+    min-height: 100%;
+    max-width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.imgWrap:hover {
+    filter: brightness(80%);
+    cursor: pointer;
+}
+
+.imgCenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
