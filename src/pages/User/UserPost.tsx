@@ -3,9 +3,10 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { Card, CardColumns, Modal, Button, Container } from 'react-bootstrap'
 
-import { Post, PostDetail, User, Comment } from "../../providers/user/types";
 import { clearSelectedPost, getPostDetailAction } from "../../providers/user/actions";
 import { postDetailSelector } from "../../providers/user/selector";
+import { User } from "../../models/User";
+import { Comment, Post, PostDetail } from "../../models/Post";
 
 import 'bootstrap/dist/css/bootstrap.css';
 

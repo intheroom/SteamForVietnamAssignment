@@ -1,8 +1,7 @@
-import {createAsyncThunk} from "@reduxjs/toolkit";
+import { createAsyncThunk } from "@reduxjs/toolkit";
 
-import {getAlbum, getAlbumList, getPhotos} from "../../apis/user/user";
-import { AlbumDetail } from "./types";
-import {Album} from "../user/types";
+import { getAlbum, getAlbumList, getPhotos } from "../../apis/user/user";
+import { Album, AlbumDetail } from "../../models/Album";
 
 export const getAlbumAction = createAsyncThunk<AlbumDetail, { albumId: string }>('GET_PHOTOS', async ({ albumId }) => {
     try {

@@ -1,10 +1,5 @@
 import { SerializedError } from "@reduxjs/toolkit";
-
-import {Album, Photo} from "../user/types";
-
-export interface AlbumDetail extends Album {
-    photos?: Photo[]
-}
+import { Album, AlbumDetail } from "../../models/Album";
 
 
 export interface AlbumDetailState {

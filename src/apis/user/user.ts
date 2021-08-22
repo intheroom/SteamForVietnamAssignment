@@ -1,4 +1,6 @@
-import { Album, Photo, Post, User, UserInformation, Comment } from "../../providers/user/types";
+import { User, UserInformation } from "../../models/User";
+import { Album, Photo } from "../../models/Album";
+import { Comment, Post } from "../../models/Post";
 
 export const getUserList = async (): Promise<UserInformation[]> => {
     return fetch('https://jsonplaceholder.typicode.com/users').then(r => r.json())

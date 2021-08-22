@@ -1,12 +1,6 @@
 import { SerializedError } from "@reduxjs/toolkit";
-
-export interface UserInformation {
-    id: string
-    name: string
-    username: string
-    email: string
-    phone?: string
-}
+import { User, UserInformation } from "../../models/User";
+import { PostDetail } from "../../models/Post";
 
 export interface UserListState {
     users: UserInformation[]
@@ -30,42 +24,4 @@ export interface UserState {
     userList: UserListState
     userDetail: UserDetailState
     postDetail: PostDetailState
-}
-
-export interface Comment {
-    postId: string
-    id: string
-    name: string
-    email: string
-    body: string
-}
-
-export interface Post {
-    userId: string
-    id: string
-    title: string
-    body: string
-}
-
-export interface PostDetail extends Post {
-    comments?: Comment[]
-}
-
-export interface Photo {
-    albumId: string
-    id: string
-    title: string
-    url: string
-    thumbnailUrl: string
-}
-
-export interface Album {
-    userId: string
-    id: string
-    title: string
-}
-
-export interface User extends UserInformation {
-    posts?: Post[]
-    albums?: Album[]
 }

@@ -6,9 +6,9 @@ import { Container, ListGroup } from 'react-bootstrap'
 
 import { getUserListAction } from "../../providers/user/actions";
 import { AppDispatch, RootState } from "../../app/store";
-import { UserInformation } from "../../providers/user/types";
 import { userListSelector } from "../../providers/user/selector";
 import Header from "../../components/Header";
+import { UserInformation } from "../../models/User";
 
 import 'bootstrap/dist/css/bootstrap.css';
 

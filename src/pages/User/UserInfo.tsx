@@ -1,5 +1,6 @@
-import {UserInformation} from "../../providers/user/types";
 import { Container, Form, Col, Row } from "react-bootstrap";
+
+import { UserInformation } from "../../models/User";
 
 interface Props {
     user: UserInformation

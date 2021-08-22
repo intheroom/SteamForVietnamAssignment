@@ -2,7 +2,8 @@ import { createAction, createAsyncThunk } from "@reduxjs/toolkit";
 
 import { getComments, getPost, getUser, getUserAlbums, getUserList, getUserPosts } from "../../apis/user/user";
 
-import { PostDetail, User, UserInformation } from "./types";
+import { User, UserInformation } from "../../models/User";
+import { PostDetail } from "../../models/Post";
 
 export const getUserListAction = createAsyncThunk<UserInformation[], void>('GET_USER_LIST', async () => {
     try {

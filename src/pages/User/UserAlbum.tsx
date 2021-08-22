@@ -1,8 +1,8 @@
 import React from "react";
 
-import { Container, ListGroup } from 'react-bootstrap'
+import { ListGroup } from 'react-bootstrap'
 
-import { User } from "../../providers/user/types";
+import { User } from "../../models/User";
 
 interface Props {
     userDetail: User

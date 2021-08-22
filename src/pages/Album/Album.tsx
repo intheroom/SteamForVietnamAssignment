@@ -1,12 +1,12 @@
-import React, {useEffect, useState} from "react";
-import {useDispatch, useSelector} from "react-redux";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 
 import { Modal } from 'react-bootstrap'
 
-import {getAlbumAction} from "../../providers/album/actions";
-import {albumSelector} from "../../providers/album/selector";
-import {Photo} from "../../providers/user/types";
+import { getAlbumAction } from "../../providers/album/actions";
+import { albumSelector } from "../../providers/album/selector";
+import { Photo } from "../../models/Album";
 
 import styles from './Album.module.css'
 
