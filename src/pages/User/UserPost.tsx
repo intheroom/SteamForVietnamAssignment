@@ -10,9 +10,9 @@ import { Comment, Post, PostDetail } from "../../models/Post";
 
 import 'bootstrap/dist/css/bootstrap.css';
 
-const renderPost = (post: Post, onSelect: (postId: string) => void) => (
+const renderPost = (name: string, post: Post, onSelect: (postId: string) => void) => (
     <Card>
-        <Card.Header>{post.title}</Card.Header>
+        <Card.Header>{name + ": " + post.title}</Card.Header>
         <Card.Body>
             <Card.Text>{post.body}</Card.Text>
             <Button variant="primary" onClick={e => onSelect(post.id)}>Open post</Button>
@@ -35,10 +35,10 @@ const CommentSection = ({ comments }: { comments: Comment[] }) => (
 )
 
 
-const PostModal = ({ post, onClose }: { post: PostDetail, onClose: () => void }) => {
+const PostModal = ({ name, post, onClose }: { name: string, post: PostDetail, onClose: () => void }) => {
     return (
         <Modal show={post} centered scrollable>
-            <Modal.Header closeButton onHide={onClose}>{post.title}</Modal.Header>
+            <Modal.Header closeButton onHide={onClose}>{name + ": " + post.title}</Modal.Header>
             <Modal.Body>
                 <p>{post.body}</p>
                 {post?.comments && <CommentSection comments={post.comments}/>}
@@ -62,9 +62,9 @@ const UserPost = ({ userDetail }: Props) => {
     return (
         <div>
             <CardColumns>
-                {userDetail?.posts && userDetail.posts.map(post => renderPost(post, handlePostClick))}
+                {userDetail?.posts && userDetail.posts.map(post => renderPost(userDetail.name, post, handlePostClick))}
             </CardColumns>
-            {selectedPost && <PostModal post={selectedPost} onClose={handleClosePost}/>}
+            {selectedPost && <PostModal name={userDetail.name} post={selectedPost} onClose={handleClosePost}/>}
         </div>
     )
 }
